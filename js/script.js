@@ -25,6 +25,7 @@ $(function() {
     }
     menuscroll();
     $(window).on('scroll', function() {
+        console.log('scroll')
         menuscroll();
     });
     /*-----------------------------------
@@ -50,6 +51,7 @@ $(function() {
      *-----------------------------------*/
     // Select all links with hashes
     $('a[href*="#"]').not('[href="#"]').not('[href="#0"]').not('[data-toggle="tab"]').on('click', function(event) {
+        console.log('onClick')
         // On-page links
         if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
             // Figure out element to scroll to
@@ -117,6 +119,7 @@ function main() {
    'use strict';
 
   	$('a.page-scroll').click(function() {
+        console.log('a.page-scroll')
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
           var target = $(this.hash);
           target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
